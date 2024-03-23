@@ -1,5 +1,5 @@
 import React from "react";
-import './viewData.css'
+import './style.css'
 import calculateMean, {calculateMedian, calculateMode} from './Calculate'
 
 const WineStatisticsTable = ({wineData}) => {

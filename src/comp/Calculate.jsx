@@ -1,7 +1,6 @@
-import React from 'react';
-import './viewData.css'
+import './style.css'
 
-
+// Calculate Mean
 const calculateMean = (data) => {
   const newData = data.map((num) =>
     typeof num === "string" ? parseFloat(num) : num
@@ -10,21 +9,24 @@ const calculateMean = (data) => {
   return (total / data.length).toFixed(3);
 };
 
+// Calculate Median
 const calculateMedian = (data) => {
   const newData = data.map((num) =>
     typeof num === "string" ? parseFloat(num) : num
   );
-  const sortedFlavanoids = newData.slice().sort((a, b) => a - b);
-  const mid = Math.floor(sortedFlavanoids.length / 2);
-  if (sortedFlavanoids.length % 2 === 0) {
-    return ((sortedFlavanoids[mid - 1] + sortedFlavanoids[mid]) / 2).toFixed(3);
+  const sortedData = newData.slice().sort((a, b) => a - b);
+  const mid = Math.floor(sortedData.length / 2);
+  if (sortedData.length % 2 === 0) {
+    return ((sortedData[mid - 1] + sortedData[mid]) / 2).toFixed(3);
   } else {
-    return sortedFlavanoids[mid];
+    return sortedData[mid].toFixed(3);
   }
 };
 
+
+// Calculate Mode
 const calculateMode = (data) => {
-  const flavanoidsMap = {};
+  const winePropMap = {};
   let maxCount = 0;
   let modeValue;
   const newData = data.map((num) =>
@@ -32,14 +34,14 @@ const calculateMode = (data) => {
   );
   // console.log(newData)
   newData.forEach((item) => {
-    const flavanoids = item;
-    flavanoidsMap[flavanoids] = (flavanoidsMap[flavanoids] || 0) + 1;
-    if (flavanoidsMap[flavanoids] > maxCount) {
-      maxCount = flavanoidsMap[flavanoids];
-      modeValue = flavanoids;
+    const winePropData = item;
+    winePropMap[winePropData] = (winePropMap[winePropData] || 0) + 1;
+    if (winePropMap[winePropData] > maxCount) {
+      maxCount = winePropMap[winePropData];
+      modeValue = winePropData;
     }
   });
-  return modeValue;
+  return modeValue.toFixed(3);
 };
 
 export default calculateMean
