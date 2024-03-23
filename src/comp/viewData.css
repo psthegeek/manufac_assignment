@@ -1,0 +1,38 @@
+/* Reset some default browser styling */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Center the table */
+  .table-container {
+    margin: 50px 100px;
+  }
+  
+  /* Basic table styling */
+  .simple-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .simple-table th, .simple-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .simple-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .simple-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .simple-table td>th{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  
+  }
+  
