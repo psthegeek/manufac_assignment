@@ -2,7 +2,7 @@ import React from 'react'
 import wineData from '../Wine-Data.json' 
 import WineStatisticsTable from './WineStatisticsTable'
 // import CalculateGamma from '../comp/Experiment'
-import GammaTable from '../comp/Experiment'
+import CalculateGamma from './calculateGamma'
 
 const Analytic = () => {
     
@@ -10,8 +10,7 @@ const Analytic = () => {
   return (
     <>
             <WineStatisticsTable wineData={wineData}/>
-            <GammaTable/>
-            {/* <CalculateGamma/> */}
+            <CalculateGamma/>
     </>
   )
 }
